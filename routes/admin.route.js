@@ -4,7 +4,7 @@ const AppointmentModel = require("../models/Appointment.model");
 const AdminRoute =express.Router();
 
 //Get all User data
-AdminRoute.get("/users", authmiddleware,async(req, res)=>{
+AdminRoute.get("/users",authmiddleware, async(req, res)=>{
     try{
         let UserInDb =await UserModel.findById(req.body.UserInDb._id)
         res.status(200).json({msg:"User Found"})

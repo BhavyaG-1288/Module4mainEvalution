@@ -27,4 +27,4 @@ const authmiddleware = (allowedrole) => {
     }
 }
 
-module.exports =authmiddleware;
+module.exports = authmiddleware;

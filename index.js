@@ -2,6 +2,8 @@ const express =require("express");
 const connectToDb = require("./config");
 const UserRoute = require("./routes/user.route");
 const AdminRoute = require("./routes/admin.route");
+const PatientRoute = require("./routes/patient.routes");
+const DoctorRoute = require("./routes/doctor.routes");
 require('dotenv').config()
 const app =express();
 const PORT =process.env.SERVER_PORT
@@ -15,6 +17,8 @@ app.use("/", (req, res)=>{
 
 app.use("/users", UserRoute);
 app.use("/admin", AdminRoute);
+app.use("/patients", PatientRoute);
+app.use("/doctor", DoctorRoute);
 
 app.listen(PORT, ()=>{
     connectToDb();
