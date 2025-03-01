@@ -3,8 +3,15 @@ const mongoose = require("mongoose");
 
 const AppointmentSchema= new mongoose.Schema({
 
-    patientId:[{tyep:String},UserInDb,UserModel.objectId],             
-    doctorId: [UserInDb.UserModel.objectId],              //Reference to User (doctor)
+    patientId:
+    {
+        name:{tyep:String},
+        age:{type:String},
+    },
+    doctorId:{
+        name:{tyep:String},  
+        Speciality:{tyep:String}, 
+    }, 
     appointmentDateTime: "2025-03-14T23:15:30",
     symptoms: String,
     fees: Number,                        //(updated by doctor after appointment)
